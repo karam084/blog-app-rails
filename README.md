@@ -1,10 +1,9 @@
-# README
+# Blog app
+In this project, you will use migration files to build your schema.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Screenshot]![blog_app_erd](https://user-images.githubusercontent.com/77942746/200083069-3301ad52-d954-4c6b-a8f1-0209f78bcf1f.png)
 
-Things you may want to cover:
-
+# Requirements
 * Ruby version
 
 * System dependencies
@@ -21,4 +20,29 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+## Authors
+
+👤 **Karam Fouad**
+- GitHub: [@githubhandle](https://github.com/karam084)
+- Twitter: [@twitterhandle](https://twitter.com/ElarabFouad)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/karam-fouad-179830214/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/jaferIdrees/vet_clinic_db/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
