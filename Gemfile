@@ -70,3 +70,12 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'ffi'
+end
+
+gem 'capybara'
+
+gem 'rails-controller-testing'
