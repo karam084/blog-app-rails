@@ -1,21 +1,41 @@
-<main>
-  <section class="post">
-    <div>
-      <h1>Post: <%= @post.title %> <span>by <%=@user.name%></span></h1>
-      <span>Comments: <%= @post.comments_counter %></span>
-      <span>Likes: <%= @post.likes_counter %></span>
-    </div>
-    <p><%= @post.text %></p>
-  </section>
+<h1>Show Page= post-> show.html</h1>
+<p>post list</p>
 
-  <section class="comment-section">
-    <h2>Comments</h2>
-    <ul>
-      <% @post.comments.each do |comment| %>
-        <li class="comment">
-          <span><%= comment.author_id%>: <%= comment.text %></span>
-        </li>
-      <% end %>
-    </ul>
-  </section>
-</main>
+<h1>Showing selected Post</h1>
+<p>
+ Title: <%= @post.title %>
+</p>
+<p>
+ Text: <%= @post.text %>
+</p>
+
+<div class="post_show_container">
+    <div class="show_header">
+        <h1>Post <span><%=@post.id %></span> by <%= @user.name%></h1>
+        <p>Comments: <%= @post.comments_counter || 0%></p>
+        <p>likes: <%= @post.likes_counter || 0%></p>
+    </div>
+
+    <div class="post_details">
+        <p>Post Text: <%= @post.text%></p>
+    </div>
+
+    <%= render "likes/like"%>
+
+    <div class="comment_holder">
+    <% @post.recent_comments.each do |comments| %>
+        <p>Comment: <%= comments.text || "No comments added"%></p>
+        <%end%>
+    </div>
+
+    <%= render "comments/form"%>
+
+    <div class="comment_holder">
+    <h5>All comments</h5>
+    <% @post.all_comments.each do |comments| %>
+        <p>Comment: <%= comments.text || "No comments added"%></p>
+        <%end%>
+    </div>
+
+
+</div>

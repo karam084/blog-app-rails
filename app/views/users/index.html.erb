@@ -1,21 +1,16 @@
-<main>
-  <h1 id="users-title">Users</h1>
+<h1>User page = user-> index.html</h1>
 
-  <ul id="list-users">
-    <% @users.each do |user| %>
-      <%= link_to user_path(user.id) do %>
-        <li class="user-card">
-        <% if user.photo.nil? %>
-        <%= image_tag "img_placeholder.jpeg" %>
-      <% else %>
-        <img src=<%= user.photo %>>
-      <% end %>
-          <div class="card-text">
-            <h2><%= user.name %></h2>
-            <span>Number of posts: <%= user.posts_counter %></span>
-          </div>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-</main>
+<div>
+     <%@user.each do |person|%>
+        <%= link_to user_path(person.id) do%>
+     <div class="user_image">
+        <img src="<%= person.photo %>" />
+     </div>  
+
+     <div class="name_container">
+         <h1><%= person.name %></h1> 
+         <span>Number of posts: <%= person.posts_counter%></span>
+     </div>
+         <%end%>
+     <%end%> 
+</div>
