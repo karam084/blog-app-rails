@@ -1,2 +1,37 @@
-<h1>Users page</h1>
-<p>show users</p>
+<main>
+  <section class="user-details">
+  <% if @user.photo.nil? %>
+        <%= image_tag "img_placeholder.jpeg" %>
+      <% else %>
+        <img src=<%= @user.photo %>>
+      <% end %>
+      <h1><a><%= @user.name %></a></h1>
+      <span>Posts: <%= @user.posts_counter %></span>
+    </div>
+  </section>
+
+  <section class="user-bio">
+    <h2>Bio</h2>
+    <p><%= @user.bio %></p>
+  </section>
+
+  <section class="recent-posts">
+    <div class="recent-title">
+      <h2>Recent Posts</h2>
+      <%= link_to user_posts_path(@user.id) do %>See all posts<% end %>
+    </div>
+    
+    <ul>
+      <% @user.three_most_recent_posts.each do |post| %>
+        <%= link_to user_post_path(@user.id, post.id) do %>
+          <li class="post">
+            <h3>Post <%='#'%><%= post.id %></h3>
+            <p><%= post.text %></p>
+            <span>Comments: <%= post.comments_counter %></span>
+            <span>Likes: <%= post.likes_counter %></span>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </section>
+</main>
