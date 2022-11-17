@@ -4,7 +4,7 @@ RSpec.describe User, type: :feature do
   describe 'show page' do
     before(:each) do
       @user = User.create(
-        name: 'Aneal Laryea',
+        name: 'Karam Fouad',
         photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
         bio: 'The greatest tactician in the world of tech',
         posts_counter: 0
