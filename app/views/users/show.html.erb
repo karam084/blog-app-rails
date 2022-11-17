@@ -1,4 +1,4 @@
-<h1>Users page = user-> show.html</h1>
+<h1>Users page </h1>
 <p>show users</p>
 
 <div class="container_user_show">
@@ -26,6 +26,7 @@
     
         <div class="post">
             <h2>Post: <%= posters.id%></h2>
+            <p>Posts Text:<%= posters.title || "comments unavailable"%></p>
             <p>Posts Text:<%= posters.text || "comments unavailable"%></p>
             <p>
                 <span>Comments: <%= posters.comments_counter || 0%></span>
@@ -41,9 +42,5 @@
             <button>See all post</button>
         </div>
     <%end%>
-
-
-   
-   
    
 </div>

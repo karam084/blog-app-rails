@@ -1,7 +1,7 @@
-<h1>User page = user-> index.html</h1>
+<h1>User page </h1>
 
 <div>
-     <%@user.each do |person|%>
+     <%@users.each do |person|%>
         <%= link_to user_path(person.id) do%>
      <div class="user_image">
         <img src="<%= person.photo %>" />
