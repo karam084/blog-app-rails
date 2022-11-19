@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  #devise_for :user_admins
+
+  devise_for :user_admins do
+    get '/user_admins/sign_out' => 'devise/sessions#destroy'
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
