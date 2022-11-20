@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
-  def current_user
-    User.first
+  private
+
+  # Overwriting the sign_out redirect path method
+  def after_sign_out_path_for(_resource_or_scope)
+    root_path
   end
 end

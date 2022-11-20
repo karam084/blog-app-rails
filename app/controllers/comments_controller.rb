@@ -1,9 +1,11 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def create
     @user = Post.find(params[:user_id])
     @post = Post.find(params[:user_id])
     @comment = Comment.new(post_params)
-    @comment.author = current_user
+    @comment.author = current_user_admin
     @comment.post = @post
 
     if @comment.save
@@ -15,6 +17,14 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
+  end
+
+  def destroy
+    post = Post.find(params[:post_id])
+    Comment.destroy(params[:id])
+    post.comments_counter -= 1
+    post.save
+    redirect_to user_posts_path(current_user_admin)
   end
 
   private
