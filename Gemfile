@@ -66,6 +66,9 @@ group :development do
   # devise ins
   gem 'devise'
 
+  # cancancan ins
+  gem 'cancancan'
+
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
