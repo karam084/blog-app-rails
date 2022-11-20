@@ -10,6 +10,16 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'users#index'
 
+  namespace :api do
+    namespace :v1 do
+      resources :users do
+        resources :posts do
+          resources :comments
+        end
+      end
+    end
+  end
+
   resources :users, only: [:index, :show] do
     resources :posts, only: [ :index, :new, :create, :show, :destroy] 
     resources :comments, only: [ :create, :destroy]
