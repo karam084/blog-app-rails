@@ -34,7 +34,7 @@ In this project, you will use migration files to build your schema.
 
  - Install the app
     - bundle install
-    - rails db:migrate
+    - rails db: migrate
 
  - Run the App
     - rails s 
